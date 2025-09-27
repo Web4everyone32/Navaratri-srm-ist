@@ -138,23 +138,31 @@
   // Sources: DrikPanchang, ET/Hindustan Times coverage, timeanddate.
   // 2025
   const events = [
-    {
-      name: "Vasant Panchami (Saraswati Puja)",
-      date: "2025-02-02",
-      note: "Magha Shukla Panchami",
-    },
-    { name: "Sharad Navaratri begins", date: "2025-09-22" },
-    { name: "Saraswati Avahan (Ashtami)", date: "2025-09-29" },
-    { name: "Saraswati Puja (Navami)", date: "2025-09-30" },
-    { name: "Ayudha Pooja (Shastra Puja)", date: "2025-10-01" },
-    { name: "Vijayadashami (Dussehra)", date: "2025-10-02" },
-    // 2026
-    { name: "Vasant Panchami (Saraswati Puja)", date: "2026-01-23" },
-    { name: "Sharad Navaratri begins", date: "2026-10-11" },
-    { name: "Saraswati Puja (during Navratri)", date: "2026-10-17" },
-    { name: "Ayudha Pooja (Shastra Puja)", date: "2026-10-20" },
-    { name: "Vijayadashami (Dussehra)", date: "2026-10-20" },
-  ];
+  { name: "Vasant Panchami (Saraswati Puja)", date: "2025-02-02", note: "Magha Shukla Panchami", url: "https://en.wikipedia.org/wiki/Vasant_Panchami", goddess: "Saraswati" },
+  { name: "Sharad Navaratri begins (Day 1 – Shailaputri)", date: "2025-09-22", url: "https://en.wikipedia.org/wiki/Shailaputri", goddess: "Shailaputri" },
+  { name: "Day 2 – Brahmacharini", date: "2025-09-23", url: "https://en.wikipedia.org/wiki/Brahmacharini", goddess: "Brahmacharini" },
+  { name: "Day 3 – Chandraghanta", date: "2025-09-24", url: "https://en.wikipedia.org/wiki/Chandraghanta", goddess: "Chandraghanta" },
+  { name: "Day 4 – Kushmanda", date: "2025-09-25", url: "https://en.wikipedia.org/wiki/Kushmanda", goddess: "Kushmanda" },
+  { name: "Day 5 – Skandamata", date: "2025-09-26", url: "https://en.wikipedia.org/wiki/Skandamata", goddess: "Skandamata" },
+  { name: "Day 6 – Katyayani", date: "2025-09-27", url: "https://en.wikipedia.org/wiki/Katyayani", goddess: "Katyayani" },
+  { name: "Day 7 – Kalaratri", date: "2025-09-28", url: "https://en.wikipedia.org/wiki/Kalaratri", goddess: "Kalaratri" },
+  { name: "Saraswati Avahan (Day 8 – Mahagauri / Ashtami)", date: "2025-09-29", note: "Saraswati Avahan (Ashtami)", url: "https://en.wikipedia.org/wiki/Mahagauri", goddess: "Mahagauri" },
+  { name: "Saraswati Puja (Day 9 – Siddhidatri / Navami)", date: "2025-09-30", note: "Saraswati Puja (Navami)", url: "https://en.wikipedia.org/wiki/Siddhidatri", goddess: "Siddhidatri" },
+  { name: "Ayudha Pooja (Shastra Puja)", date: "2025-10-01", url: "https://en.wikipedia.org/wiki/Ayudha_Puja" },
+  { name: "Vijayadashami (Dussehra)", date: "2025-10-02", url: "https://en.wikipedia.org/wiki/Vijayadashami" },
+  { name: "Vasant Panchami (Saraswati Puja)", date: "2026-01-23", url: "https://en.wikipedia.org/wiki/Vasant_Panchami", goddess: "Saraswati" },
+  { name: "Sharad Navaratri begins (Day 1 – Shailaputri)", date: "2026-10-11", url: "https://en.wikipedia.org/wiki/Shailaputri", goddess: "Shailaputri" },
+  { name: "Day 2 – Brahmacharini", date: "2026-10-12", url: "https://en.wikipedia.org/wiki/Brahmacharini", goddess: "Brahmacharini" },
+  { name: "Day 3 – Chandraghanta", date: "2026-10-13", url: "https://en.wikipedia.org/wiki/Chandraghanta", goddess: "Chandraghanta" },
+  { name: "Day 4 – Kushmanda", date: "2026-10-14", url: "https://en.wikipedia.org/wiki/Kushmanda", goddess: "Kushmanda" },
+  { name: "Day 5 – Skandamata", date: "2026-10-15", url: "https://en.wikipedia.org/wiki/Skandamata", goddess: "Skandamata" },
+  { name: "Day 6 – Katyayani", date: "2026-10-16", url: "https://en.wikipedia.org/wiki/Katyayani", goddess: "Katyayani" },
+  { name: "Day 7 – Kalaratri", date: "2026-10-17", url: "https://en.wikipedia.org/wiki/Kalaratri", goddess: "Kalaratri" },
+  { name: "Day 8 – Mahagauri (incl. Saraswati Puja in some regions)", date: "2026-10-18", note: "Saraswati Puja in some traditions", url: "https://en.wikipedia.org/wiki/Mahagauri", goddess: "Mahagauri" },
+  { name: "Day 9 – Siddhidatri (Navami)", date: "2026-10-19", url: "https://en.wikipedia.org/wiki/Siddhidatri", goddess: "Siddhidatri" },
+  { name: "Ayudha Pooja (Shastra Puja)", date: "2026-10-20", url: "https://en.wikipedia.org/wiki/Ayudha_Puja" },
+  { name: "Vijayadashami (Dussehra)", date: "2026-10-21", url: "https://en.wikipedia.org/wiki/Vijayadashami" }
+];
 
   function fmt(d) {
     return new Date(d).toLocaleDateString(undefined, {
@@ -171,23 +179,19 @@
     ul.innerHTML = events
       .map(
         (e) =>
-          `<li><strong>${e.name}</strong> — <span class="muted">${fmt(
-            e.date
-          )}</span>${
-            e.note ? `<br><small class="muted">${e.note}</small>` : ""
-          }</li>`
+          `<li><strong>${e.name}</strong> — <span class=\"muted\">${fmt(e.date)}</span>${ e.goddess ? ` <span class='tag' style='margin-left:6px'>${e.goddess}</span>` : '' }${ e.note ? `<br><small class='muted'>${e.note}</small>` : '' }${ e.url ? `<br><a class='btn ghost' target='_blank' rel='noopener' href='${e.url}'>More info</a>` : '' }</li>`
       )
       .join("");
   }
 
   // Minimal month calendar renderer (contained styles to avoid theme/layout changes)
   const monthsToShow = [
-    { y: 2025, m: 2 }, // Feb '25 (Vasant Panchami)
-    { y: 2025, m: 9 }, // Sep '25 (Navaratri start)
-    { y: 2025, m: 10 }, // Oct '25 (Ayudha, Vijayadashami)
-    { y: 2026, m: 1 }, // Jan '26 (Vasant Panchami)
-    { y: 2026, m: 10 }, // Oct '26 (Navaratri & Vijayadashami)
-  ];
+  { y: 2025, m: 2 },
+  { y: 2025, m: 9 },
+  { y: 2025, m: 10 },
+  { y: 2026, m: 1 },
+  { y: 2026, m: 10 },
+];
   const evDates = new Set(events.map((e) => e.date));
   const mini = document.getElementById("mini-cals");
   if (mini) {

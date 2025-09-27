@@ -175,80 +175,70 @@
    - Renders into #stories only; keeps page dimensions intact.
 */
   (function () {
+    
     const FALLBACK = [
       {
         id: 1,
-        title: "Born From the First Breath",
-        desc: "Brahma’s breath gives form to Saraswati—speech becoming the world’s first word.",
-        audio: "assets/audio/ep01-born-from-the-first-breath.mp3",
+        title: "Shailaputri – Daughter of the Mountains",
+        desc: "Embodiment of strength, purity, and resolve. She rides a bull and carries a trident.",
+        audio: "assets/audio/stories/01-shailaputri.mp3",
       },
       {
         id: 2,
-        title: "I Am the Queen (Vāk Sūkta)",
-        desc: "Speech introduces herself; Saraswati as the voice behind all voices.",
-        audio: "assets/audio/ep02-i-am-the-queen.mp3",
+        title: "Brahmacharini – The Devoted Ascetic",
+        desc: "Symbol of penance and meditation, inspiring perseverance in students.",
+        audio: "assets/audio/stories/02-brahmacharini.mp3",
       },
       {
         id: 3,
-        title: "River of Thunder",
-        desc: "Saraswati as mighty river-goddess who clears obstacles and brings victory.",
-        audio: "assets/audio/ep03-river-of-thunder.mp3",
+        title: "Chandraghanta – The Warrior Goddess",
+        desc: "Her crescent moon and mighty roar remove fears, bringing courage.",
+        audio: "assets/audio/stories/03-chandraghanta.mp3",
       },
       {
         id: 4,
-        title: "Invisible Third at the Confluence",
-        desc: "Where Ganga and Yamuna meet, tradition says Saraswati flows invisibly.",
-        audio: "assets/audio/ep04-invisible-third.mp3",
+        title: "Kushmanda – Creator of the Universe",
+        desc: "With her radiant smile, she created the cosmos and fills it with vitality.",
+        audio: "assets/audio/stories/04-kushmanda.mp3",
       },
       {
         id: 5,
-        title: "Pushkar and the Curse",
-        desc: "Brahma’s sacrifice, Gayatri’s arrival, and Savitri’s fateful curse.",
-        audio: "assets/audio/ep05-pushkar-and-the-curse.mp3",
+        title: "Skandamata – Mother of Skanda",
+        desc: "She blesses devotees with wisdom and prosperity, holding baby Skanda on her lap.",
+        audio: "assets/audio/stories/05-skandamata.mp3",
       },
       {
         id: 6,
-        title: "Kalidasa’s Blessing",
-        desc: "The mocked youth touched by Saraswati becomes the poet Kalidasa.",
-        audio: "assets/audio/ep06-kalidasa-blessing.mp3",
+        title: "Katyayani – The Fierce Protector",
+        desc: "Born of sage Katyayana’s penance, she destroys evil and grants justice.",
+        audio: "assets/audio/stories/06-katyayani.mp3",
       },
       {
         id: 7,
-        title: "Throne of Wisdom",
-        desc: "Śāradā Peeth and the Sarvajña Pīṭha—trial of knowledge and purity.",
-        audio: "assets/audio/ep07-throne-of-wisdom.mp3",
+        title: "Kalaratri – The Dark Night",
+        desc: "Her fierce form destroys ignorance and dispels darkness.",
+        audio: "assets/audio/stories/07-kalaratri.mp3",
       },
       {
         id: 8,
-        title: "Veena Across the Sea",
-        desc: "Saraswati journeys as Benzaiten—eloquence and music in Japan.",
-        audio: "assets/audio/ep08-veena-across-the-sea.mp3",
+        title: "Mahagauri – The Radiant One",
+        desc: "Her pure white form symbolizes peace, inner calm, and blessings of purity.",
+        audio: "assets/audio/stories/08-mahagauri.mp3",
       },
       {
         id: 9,
-        title: "First Letters on Rice",
-        desc: "Vidyarambham/Aksharabhyāsa—the alphabet as an offering to the goddess.",
-        audio: "assets/audio/ep09-first-letters-on-rice.mp3",
+        title: "Siddhidatri – Granter of Siddhis",
+        desc: "She bestows spiritual powers and ultimate fulfillment to her devotees.",
+        audio: "assets/audio/stories/09-siddhidatri.mp3",
       },
       {
         id: 10,
-        title: "Following a Vanished River",
-        desc: "Balarama’s pilgrimage along Saraswati’s course—river and word as one.",
-        audio: "assets/audio/ep10-vanished-river.mp3",
-      },
-      {
-        id: 11,
-        title: "Co-Wives of the Cosmos",
-        desc: "Fluid Puranic tellings of Saraswati with Brahma, Vishnu, and Ganga.",
-        audio: "assets/audio/ep11-co-wives-of-the-cosmos.mp3",
-      },
-      {
-        id: 12,
-        title: "The Swan that Chooses Clarity",
-        desc: "Hamsa as viveka—the power to discern the pure note in the noise.",
-        audio: "assets/audio/ep12-the-swan-of-clarity.mp3",
+        title: "Mahishasura Mardini – Slayer of the Demon",
+        desc: "Durga’s ultimate victory over Mahishasura symbolizes triumph of good over evil.",
+        audio: "assets/audio/stories/10-mahishasura-mardini.mp3",
       },
     ];
+
 
     function getFromI18next() {
       try {
