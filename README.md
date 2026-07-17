@@ -24,3 +24,6 @@ Home, Stories, Festivals (Vasant Panchami, Navaratri), Chants, Temples, Quiz, Ga
 ## Personalization
 - **SRM IST Edition**: Buttons now use SRM-esque Blue/Gold (#034DA1 / #C39800). Update in `styles.css` if you have official brand codes.
 - **Festival dates (2025, Chennai/IST)** prefilled in `/festivals/index.html`.
+
+## Url Link
+- https://navaratri-srm-ist.netlify.app/
